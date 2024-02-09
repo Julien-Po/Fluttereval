@@ -6,14 +6,12 @@ class EmptyPage extends StatefulWidget {
 }
 
 class _EmptyPageState extends State<EmptyPage> {
-  List<double> weeklySummary = [4.10, 78.5]; 
+  List<double> weeklySummary = [5000,8745,3698,1000,7832,6781, 0217, 7423, 9873, 4758, 7412, 3698];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
 
-      ),
     );
   }
 }

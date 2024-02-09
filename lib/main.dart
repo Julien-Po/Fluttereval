@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:dashboard/bar_graph.dart';
+import 'package:dashboard/bar_data.dart';
+import 'package:dashboard/individual_bar.dart';
+import 'package:dashboard/chart.dart';
 
 
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final List<double> weeklySummary = [5000, 8745, 3698, 1000, 7832, 6781, 217, 7423, 9873, 4758, 7412, 3698];
+
+   MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData.dark(
+      theme: ThemeData.dark(),
 
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // Passer weeklySummary à MyHomePage
+      home: MyHomePage(title: 'Flutter Demo Home Page', weeklySummary: weeklySummary),
     );
   }
 }
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title, required List<double> weeklySummary}) : super(key: key);
 
 
   @override
@@ -209,9 +215,6 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Ajouter le widget en dessous de la dernière colonne
-                  SizedBox(height: 20),
-
                 ],
               ),
             ),
